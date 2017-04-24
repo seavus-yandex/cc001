@@ -11,6 +11,7 @@ import (
 
 // SimpleChaincode example simple Chaincode implementation
 type SimpleChaincode struct {
+	
 }
 
 func main() {
