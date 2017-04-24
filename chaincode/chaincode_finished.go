@@ -63,23 +63,51 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	}else if function == "read" { 
 		return t.read(stub, args)
 	}else if function == "read_title" { 
-		return t.read(stub, args)
+		return t.read_title(stub, args)
 	}else if function == "read_startOnDate" { 
-		return t.read(stub, args)
+		return t.read_startOnDate(stub, args)
 	}else if function == "read_endedOnDate" { 
-		return t.read(stub, args)
+		return t.read_endedOnDate(stub, args)
 	}else if function == "read_deadlineDate" { 
-		return t.read(stub, args)
+		return t.read_deadlineDate(stub, args)
 	}else if function == "read_initiator" { 
-		return t.read(stub, args)
+		return t.read_initiator(stub, args)
 	}else if function == "read_moderators" { 
-		return t.read(stub, args)
+		return t.read_moderators(stub, args)
 	}else if function == "read_reviewers" { 
-		return t.read(stub, args)
+		return t.read_reviewers(stub, args)
 	}
 	fmt.Println("query did not find func: " + function)
 
 	return nil, errors.New("Received unknown function query: " + function)
+}
+
+func (t *SimpleChaincode) read_title(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_startOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_endedOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_deadlineDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_initiator(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_moderators(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
+}
+
+func (t *SimpleChaincode) read_reviewers(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	return t.read(stub, args)
 }
 
 // write - invoke function to write key/value pair
