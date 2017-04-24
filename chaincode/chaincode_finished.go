@@ -41,13 +41,13 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	// Handle different functions
 	if function == "init" {
 		return t.Init(stub, "init", args)
-	} else if function == "write" {
-		return t.write(stub, args)
 	} else if function == "append" {
 		return t.append(stub, args)
 	} else if function == "push" {
 		return t.push(stub, args)
-	}
+	} else if function == "write" {
+		return t.write(stub, args)
+	} 
 	fmt.Println("invoke did not find func: " + function)
 
 	return nil, errors.New("Received unknown function invocation: " + function)
@@ -58,10 +58,24 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	fmt.Println("query is running " + function)
 
 	// Handle different functions
-	if function == "read" { //read a variable
-		return t.read(stub, args)
-	}else if function == "pull" { 
+	if function == "pull" { 
 		return t.pull(stub, args)
+	}else if function == "read" { 
+		return t.read(stub, args)
+	}else if function == "read_title" { 
+		return t.read(stub, args)
+	}else if function == "read_startOnDate" { 
+		return t.read(stub, args)
+	}else if function == "read_endedOnDate" { 
+		return t.read(stub, args)
+	}else if function == "read_deadlineDate" { 
+		return t.read(stub, args)
+	}else if function == "read_initiator" { 
+		return t.read(stub, args)
+	}else if function == "read_moderators" { 
+		return t.read(stub, args)
+	}else if function == "read_reviewers" { 
+		return t.read(stub, args)
 	}
 	fmt.Println("query did not find func: " + function)
 
