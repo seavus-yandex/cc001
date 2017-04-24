@@ -10,8 +10,7 @@ import (
 )
 
 // SimpleChaincode example simple Chaincode implementation
-type SimpleChaincode struct {
-	
+type SimpleChaincode struct {	
 }
 
 func main() {
