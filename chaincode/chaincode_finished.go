@@ -62,51 +62,51 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 		return t.pull(stub, args)
 	}else if function == "read" { 
 		return t.read(stub, args)
-	}else if function == "read_title" { 
-		return t.read_title(stub, args)
-	}else if function == "read_startOnDate" { 
-		return t.read_startOnDate(stub, args)
-	}else if function == "read_endedOnDate" { 
-		return t.read_endedOnDate(stub, args)
-	}else if function == "read_deadlineDate" { 
-		return t.read_deadlineDate(stub, args)
-	}else if function == "read_initiator" { 
-		return t.read_initiator(stub, args)
-	}else if function == "read_moderators" { 
-		return t.read_moderators(stub, args)
-	}else if function == "read_reviewers" { 
-		return t.read_reviewers(stub, args)
+	}else if function == "readtitle" { 
+		return t.readtitle(stub, args)
+	}else if function == "readstartOnDate" { 
+		return t.readstartOnDate(stub, args)
+	}else if function == "readendedOnDate" { 
+		return t.readendedOnDate(stub, args)
+	}else if function == "readdeadlineDate" { 
+		return t.readdeadlineDate(stub, args)
+	}else if function == "readinitiator" { 
+		return t.readinitiator(stub, args)
+	}else if function == "readmoderators" { 
+		return t.readmoderators(stub, args)
+	}else if function == "readreviewers" { 
+		return t.readreviewers(stub, args)
 	}
 	fmt.Println("query did not find func: " + function)
 
 	return nil, errors.New("Received unknown function query: " + function)
 }
 
-func (t *SimpleChaincode) read_title(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readtitle(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_startOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readstartOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_endedOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readendedOnDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_deadlineDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readdeadlineDate(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_initiator(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readinitiator(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_moderators(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readmoderators(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
-func (t *SimpleChaincode) read_reviewers(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *SimpleChaincode) readreviewers(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	return t.read(stub, args)
 }
 
