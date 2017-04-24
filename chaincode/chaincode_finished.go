@@ -63,19 +63,19 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	}else if function == "read" { 
 		return t.read(stub, args)
 	}else if function == "read_title" { 
-		return t.readtitle(stub, args)
+		return t.read_title(stub, args)
 	}else if function == "read_startOnDate" { 
-		return t.readstartOnDate(stub, args)
+		return t.read_startOnDate(stub, args)
 	}else if function == "read_endedOnDate" { 
-		return t.readendedOnDate(stub, args)
+		return t.read_endedOnDate(stub, args)
 	}else if function == "read_deadlineDate" { 
-		return t.readdeadlineDate(stub, args)
+		return t.read_deadlineDate(stub, args)
 	}else if function == "read_initiator" { 
-		return t.readinitiator(stub, args)
+		return t.read_initiator(stub, args)
 	}else if function == "read_moderators" { 
-		return t.readmoderators(stub, args)
+		return t.read_moderators(stub, args)
 	}else if function == "read_reviewers" { 
-		return t.readreviewers(stub, args)
+		return t.read_reviewers(stub, args)
 	}
 	fmt.Println("query did not find func: " + function)
 
