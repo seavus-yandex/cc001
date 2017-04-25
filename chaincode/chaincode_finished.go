@@ -131,7 +131,7 @@ func (t *SimpleChaincode) write(stub shim.ChaincodeStubInterface, args []string)
 
 // read - query function to read key/value pair
 func (t *SimpleChaincode) read(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
-	var key, jsonResp string
+	var key string
 	var err error
 
 	if len(args) != 1 {
@@ -141,10 +141,10 @@ func (t *SimpleChaincode) read(stub shim.ChaincodeStubInterface, args []string) 
 	key = args[0]
 	valAsbytes, err := stub.GetState(key)
 	if err != nil {
-		jsonResp = "{\"Error\":\"Failed to get state for " + key + "\"}"
-
+		//var jsonResp string
+		//jsonResp = "{\"Error\":\"Failed to get state for " + key + "\"}"
 		//return nil, errors.New(jsonResp)
-		
+
 		var result string = ""
 		return []byte(result), nil
 	}
