@@ -320,6 +320,7 @@ func (t *SimpleChaincode) readMany(stub shim.ChaincodeStubInterface, args []stri
 	var keyPrefix string
 	var key string
 	var err error
+	var valAsbytes []byte
 
 	keyPrefix = args[0]
 
@@ -332,7 +333,7 @@ func (t *SimpleChaincode) readMany(stub shim.ChaincodeStubInterface, args []stri
 	for i := 2; i < index; i++ {
 		//////////////
 		key = args[i];
-		valAsbytes, err := stub.GetState(keyPrefix + key)
+		valAsbytes, err = stub.GetState(keyPrefix + key)
 		if err == nil {
 			result = result + " \"" + key + "\" : \"" + string(valAsbytes) + "\" ," 
 		}else{
