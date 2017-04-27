@@ -60,6 +60,8 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	// Handle different functions
 	if function == "pull" { 
 		return t.pull(stub, args)
+	}else if function == "readMany" { 
+		return t.readMany(stub, args)
 	}else if function == "read" { 
 		return t.read(stub, args)
 	}else if function == "read_title" { 
@@ -309,6 +311,38 @@ func (t *SimpleChaincode) pull(stub shim.ChaincodeStubInterface, args []string) 
 	}
 
 	result = result + "],\"position\":" + strconv.FormatUint(count, 10) + "}"
+
+	return []byte(result), nil
+}
+
+// readMany - query function to read keys/values pairs
+func (t *SimpleChaincode) readMany(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	var keyPrefix string
+	var key string
+	var err error
+
+	keyPrefix = args[0]
+
+	var count int
+	count, err = strconv.Atoi(args[1])
+	index := count + 2;
+
+	var result string = "{"
+
+	for i := 2; i < index; i++ {
+		//////////////
+		key = args[i];
+		valAsbytes, err := stub.GetState(keyPrefix + key)
+		if err == nil {
+			result = result + " \"" + key + "\" : \"" + string(valAsbytes) + "\" ," 
+		}else{
+			result = result + " \"" + key + "\" : null ,"
+		}
+		//////////////
+	}
+
+	result = result + " _last_ : null "
+	result = result + "}"
 
 	return []byte(result), nil
 }
