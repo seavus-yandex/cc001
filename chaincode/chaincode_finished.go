@@ -315,7 +315,6 @@ func (t *SimpleChaincode) pull(stub shim.ChaincodeStubInterface, args []string) 
 	return []byte(result), nil
 }
 
-
 // readMany - query function to read keys/values pairs
 func (t *SimpleChaincode) readMany(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var keyPrefix string
