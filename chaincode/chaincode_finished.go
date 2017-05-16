@@ -151,7 +151,9 @@ func (t *SimpleChaincode) read(stub shim.ChaincodeStubInterface, args []string) 
 		return []byte(result), nil
 	}
 
-	return valAsbytes, nil
+	var value string = "";
+	value = value + string(valAsbytes)
+	return []byte(value), nil	
 }
 
 // append - invoke function to append value to key/value pair
